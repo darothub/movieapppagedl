@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/singleMovieScreen"
+        android:name="com.darotapp.movieapptoo.screens.SingleMovieScreen"
+        android:label="fragment_single_movie_screen"
+        tools:layout="@layout/fragment_single_movie_screen" >
+        <argument
+            android:name="movie"
+            app:argType="com.darotapp.movieapptoo.data.vo.MovieDetails"
+            app:nullable="true"
+            android:defaultValue="@null" />
+        <argument
+            android:name="id"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.darotapp.movieapptoo.screens.MainFragment"
+        android:label="fragment_blank"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/toSingleMovie"
+            app:destination="@id/singleMovieScreen" />
+    </fragment>
+</navigation>
